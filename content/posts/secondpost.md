@@ -1,6 +1,7 @@
 ---
 title: Evil Husbands & Their Curious Wives -- Fitcher's Bird
 description: This is a post on My Blog about leveraging agile frameworks.
+slug: fitchers-bird
 author: The Brothers Grimm
 date: 2018-07-04
 series: 
