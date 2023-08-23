@@ -1,6 +1,7 @@
 ---
 title: Evil Husbands & Their Curious Wives -- The Devil
 description: An Italian edition of Bluebeard
+slug: the-devil
 date: 2018-08-24
 series: 
   slug: "evil-husbands-curious-wives"

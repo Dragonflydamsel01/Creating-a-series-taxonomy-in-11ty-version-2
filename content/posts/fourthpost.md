@@ -1,6 +1,7 @@
 ---
 title: The Golden Apple Tree and the Nine Peahens, Part I
 description: This is a new series about swan wives
+slug: golden-apple-tree-part-1
 date: 2018-10-01
 series:
   slug: "swan-wives"
