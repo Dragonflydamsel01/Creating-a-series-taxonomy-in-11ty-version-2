@@ -35,10 +35,13 @@ The name you give the file will be used as the slug for the series (which you ca
 Note: I use "preface" because I use descriptions on my blog posts normally, and the "description" key in a post will take precedence over a description key on the series collection object. 
 
 Inside the frontmatter for the file, this is all you need:
+
+```yaml
 ---
 title: Series Title
 preface: "Description of your series"
 ---
+```
 
 6. content / series / series.11tydata.js
 
