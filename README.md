@@ -13,13 +13,13 @@ Here are the important bits:
 
 If you don't fork this version, just copy and paste the relevant files, and pay attention to where they are located:
 
-1. \_11ty / collections
+1. _11ty / collections
 
 "seriesCollections.js"
 
 This creates the collection and names the front matter variables that will be attached to a given collection object.
 
-2. _includes/layouts/post.njk
+2. Inside  _includes/layouts/post.njk
 
 CTRL+F to "collections.seriesCollections" (without the quotes)
 
