@@ -19,7 +19,7 @@ If you don't fork this version, just copy and paste the relevant files, and pay 
 
 This creates the collection and names the front matter variables that will be attached to a given collection object.
 
-2. \_includes/layouts/post.njk
+2. _includes/layouts/post.njk
 
 CTRL+F to "collections.seriesCollections" (without the quotes)
 
@@ -80,7 +80,7 @@ Yes, I used the spelling of subhead that's used in journalism, "subhed". This is
 
 Copy what you need there to your own CSS.
 
-2. In post.njk file in "\_includes/layouts"
+2. In post.njk file in "_includes/layouts"
 
 Line 47 is how the external links get included. Note also line 43 ("if post.data.permalink ..."), which prevents the external links from otherwise appearing twice in your Table of Contents
 
@@ -90,7 +90,7 @@ a. Inside that folder, take note of the frontmatter of the post.
 
 4. Non-intuitive last or first step:
 
-a. I always create a post collection, because I don't rely upon tags to make the collections. I use a global folder, see the "\_11ty / collections / posts.js" file. Eleventy explains more here: https://www.11ty.dev/docs/collections/#getfilteredbyglob(-glob-)
+a. I always create a post collection, because I don't rely upon tags to make the collections. I use a global folder, see the "_11ty / collections / posts.js" file. Eleventy explains more here: https://www.11ty.dev/docs/collections/#getfilteredbyglob(-glob-)
 
 b. In .eleventy.js, you should see:
 
