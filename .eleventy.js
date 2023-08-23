@@ -28,8 +28,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginBundle);
   eleventyConfig.setDataDeepMerge(true);
 
-  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
-
+  //Official filters
   eleventyConfig.addFilter('readableDate', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat(
       'dd LLL yyyy'
@@ -40,6 +39,8 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {
     return DateTime.fromJSDate(dateObj, { zone: 'utc' }).toFormat('yyyy-LL-dd');
   });
+
+  eleventyConfig.addLayoutAlias('post', 'layouts/post.njk');
 
   // Get the first `n` elements of a collection.
   eleventyConfig.addFilter('head', (array, n) => {
