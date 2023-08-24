@@ -155,7 +155,7 @@ module.exports = function (eleventyConfig) {
       includes: "_includes",  // default: "_includes"
       data: "_data",          // default: "_data"
       input: "/content",          // default: "."
-      output: "_site"
+      output: "/_site"
     },
   };
 };
