@@ -11,7 +11,7 @@ tags: second tag
 
 At length he resolved to go and look after his peahen; resolving never to come back again unless he should find her. When he told the king his father of his intention, the king begged him not do go away, and told him that he would find him another beautiful girl, and that he might choose out of the whole kingdom.
 
-But all the king's persuasions were useless, so his son went into the world -- taking only one servant to serve him -- to search everywhere for his peahen lady.
+But all the king's persuasions were useless, so his son went into the world -- taking only one servant to serve him -- to search everywhere for his peahen.
 
 After many travels he came one day to a lake. Now by the lake stood a large and beautiful palace. In the palace lived an old woman as queen, and with the queen lived a girl, her daughter. He said to the old woman, "For heaven's sake, grandmother, do you know anything about nine golden peahens?"
 
