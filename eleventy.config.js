@@ -151,10 +151,10 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: 'njk',
 
     // These are all optional, defaults are shown:
-    dir: {
-      input: "content",          // default: "."
+    dir: {     
       includes: "_includes",  // default: "_includes"
       data: "_data",          // default: "_data"
+      input: "content",          // default: "."
       output: "_site"
     },
   };
