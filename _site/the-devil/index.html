@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Evil Husbands &amp; Their Curious Wives -- The Devil</title>
+		<meta name="description" content="An Italian edition of Bluebeard">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Your Blog Name">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Your Blog Name">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+		<style>* { box-sizing: border-box; }
+:root {
+  --red: #c5004a;
+  --darkred: #7f0036;
+  --lightgray: #e0e0e0;
+  --gray: #c0c0c0;
+  --darkgray: #333;
+  --navy: #375282; /*dark cornblower blue */
+  --blue: cornflowerblue;
+  --white: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--darkgray);
+  background-color: var(--white);
+}
+p:last-child {
+  margin-bottom: 0;
+}
+p,
+.tmpl-post li,
+img {
+  max-width: 37.5em; /* 600px /16 */
+}
+p,
+.tmpl-post li {
+  line-height: 1.45;
+}
+a[href] {
+  color: var(--blue);
+}
+a[href]:visited {
+  color: var(--navy);
+}
+main {
+  padding: 1rem;
+}
+main :first-child {
+  margin-top: 0;
+}
+header {
+  border-bottom: 1px dashed var(--lightgray);
+}
+header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+table {
+  margin: 1em 0;
+}
+table td,
+table th {
+  padding-right: 1em;
+}
+
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    "Courier New", Courier, monospace;
+  line-height: 1.5;
+}
+pre {
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: 0.5em 0;
+  background-color: #f6f6f6;
+}
+.highlight-line {
+  display: block;
+  padding: 0.125em 1em;
+  text-decoration: none; /* override del, ins, mark defaults */
+  color: inherit; /* override del, ins, mark defaults */
+}
+
+/* allow highlighting empty lines */
+.highlight-line:empty:before {
+  content: " ";
+}
+/* avoid double line breaks when using display: block; */
+.highlight-line + br {
+  display: none;
+}
+
+.highlight-line-isdir {
+  color: #b0b0b0;
+  background-color: #222;
+}
+.highlight-line-active {
+  background-color: #444;
+  background-color: hsla(0, 0%, 27%, 0.8);
+}
+.highlight-line-add {
+  background-color: #45844b;
+}
+.highlight-line-remove {
+  background-color: #902f2f;
+}
+
+/* Header */
+.home {
+  padding: 0 1rem;
+  float: left;
+  margin: 1rem 0; /* 16px /16 */
+  font-size: 1em; /* 16px /16 */
+}
+.home :link:not(:hover) {
+  text-decoration: none;
+}
+
+/* Nav */
+.nav {
+  padding: 0;
+  list-style: none;
+  float: left;
+  margin-left: 1em;
+}
+.nav-item {
+  display: inline-block;
+  margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+  text-decoration: none;
+}
+.nav-item-active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+  list-style: none;
+  padding: 0;
+}
+.postlist-item {
+  counter-increment: start-from -1;
+}
+.postlist-item:before {
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
+}
+.postlist-date,
+.postlist-item:before {
+  font-size: 0.8125em; /* 13px /16 */
+  color: var(--darkgray);
+}
+.postlist-date {
+  word-spacing: -0.5px;
+}
+.postlist-link {
+  display: inline-block;
+  padding: 0.25em 0.1875em; /* 4px 3px /16 */
+}
+.postlist-item-active .postlist-link {
+  font-weight: bold;
+}
+.tmpl-home .postlist-link {
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  vertical-align: text-top;
+  text-transform: uppercase;
+  font-size: 0.625em; /* 10px /16 */
+  padding: 2px 4px;
+  margin-left: 0.8em; /* 8px /10 */
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 0.25em; /* 3px /12 */
+  text-decoration: none;
+}
+a[href].tag,
+a[href].tag:visited {
+  color: #fff;
+}
+
+/* Warning */
+.warning {
+  background-color: #ffc;
+  padding: 1em 0.625em; /* 16px 10px /16 */
+}
+.warning ol:only-child {
+  margin: 0;
+}
+
+/* Direct Links / Markdown Headers */
+.direct-link {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: 0.1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+  color: transparent;
+}
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+  color: #aaa;
+}
+
+/* Custom Styles for Series Tutorial */
+
+nav.seriesTOC {
+  color: rebeccapurple;
+  font-weight: 700;
+  font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+details {
+  background-color: antiquewhite;
+  padding: 1rem;
+}
+
+details .content {
+  padding: 1rem;
+}
+
+details .content p {
+  font-style: italic;
+}
+
+details ul {
+  list-style-type: none;
+}
+
+details ul li {
+  line-height: 1.7;
+}
+
+details ul li.subhead {
+  margin-bottom: 1rem;
+  font-variant-caps: all-small-caps;
+}
+
+a[href]:not(:where(
+  /* exclude hash only links */
+  [href^="#"],
+  /* exclude relative but not double slash only links */
+  [href^="/"]:not([href^="//"]),
+  /* domains to exclude */
+  [href*="//localhost:8080"],
+  /* subdomains to exclude */
+)):after {
+  padding-left: 0.5rem;
+  content: "↬";
+  color: crimson;
+}
+
+[aria-current="page"] {
+  font-weight: 300;
+  text-decoration: none;
+}</style>
+	</head>
+  <body>
+    <header>
+      <h1 class="home"><a href="/">Your Blog Name</a></h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/archives/">Archive</a></li>
+        <li class="nav-item"><a href="/about/">About Me</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <div class="warning">
+        <ol>
+          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
+          <li>(Optional) Edit <code>.eleventy.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
+          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
+        </ol>
+        <p><em>This is an <a href="https://www.11ty.io/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
+      </div>
+
+      
+
+<h1>Evil Husbands &amp; Their Curious Wives -- The Devil</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2018-08-24">24 Aug 2018</time></li>
+	<li><a href="/tags/second-tag/" class="post-tag">second tag</a>, </li>
+	<li><a href="/tags/posts-with-two-tags/" class="post-tag">posts with two tags</a></li>
+</ul>
+
+<p>Our series concludes with a variant of Bluebeard from Venice, Italy.</p>
+<h2 id="how-the-devil-married-three-sisters" tabindex="-1">How the Devil Married Three Sisters <a class="header-anchor" href="#how-the-devil-married-three-sisters">#</a></h2>
+<p>Once upon a time the devil was seized with a desire to marry. He therefore left hell, took the form of a handsome young man, and built a fine large house. When it was completed and furnished in the most fashionable style he introduced himself to a family where there were three pretty daughters, and paid his addresses to the eldest of them. The handsome man pleased the maiden, her parents were glad to see a daughter so well provided for, and it was not long before the wedding was celebrated.</p>
+<p>When he had taken his bride home, he presented her with a very tastefully arranged bouquet, led her through all the rooms of the house, and finally to a closed door.</p>
+<p>&quot;The whole house is at your disposal,&quot; said he, &quot;only I must request one thing of you; that is, that you do not on any account open this door.&quot;</p>
+<p>Of course the young wife promised faithfully; but equally, of course, she could scarcely wait for the moment to come when she might break her promise. When the devil had left the house the next morning, under pretence of going hunting, she ran hastily to the forbidden door, opened it, and saw a terrible abyss full of fire that shot up towards her, and singed the flowers on her bosom.</p>
+<p>When her husband came home and asked her whether she had kept her promise, she unhesitatingly said &quot;Yes.&quot;</p>
+<p>But he saw by the flowers that she was telling a lie, and said, &quot;Now I will not put your curiosity to the test any longer. Come with me. I will show you myself what is behind the door.&quot;</p>
+<p>Thereupon he led her to the door, opened it, gave her such a push that she fell down into hell, and shut the door again.</p>
+<p>A few months after he wooed the next sister for his wife, and won her; but with her everything that had happened with the first wife was exactly repeated.</p>
+<p>Finally he courted the third sister. She was a prudent maiden, and said to herself, &quot;He has certainly murdered my two sisters; but then it is a splendid match for me, so I will try and see whether I cannot be more fortunate than they.&quot;</p>
+<p>And accordingly she consented.</p>
+<p>After the wedding the bridegroom gave her a beautiful bouquet, but forbade her, also, to open the door which he pointed out.</p>
+<p>Not a whit less curious than her sisters, she, too, opened the forbidden door when the devil had gone hunting, but she had previously put her flowers in water. Then she saw behind the door the fatal abyss and her sisters therein.</p>
+<p>&quot;Ah!&quot; she exclaimed, &quot;poor creature that I am; I thought I had married an ordinary man, and instead of that he is the devil! How can I get away from him?&quot;</p>
+<p>She carefully pulled her two sisters out of hell and hid them. When the devil came home he immediately looked at the bouquet, which she again wore on her bosom, and when he found the flowers so fresh he asked no questions; but reassured as to his secret, he now, for the first time, really loved her.</p>
+<p>After a few days she asked him if he would carry three chests for her to her parents' house, without putting them down or resting on the way. &quot;But,&quot; she added, &quot;you must keep your word, for I shall be watching you.&quot;</p>
+<p>The devil promised to do exactly as she wished. So the next morning she put one of her sisters in a chest, and laid it on her husband's shoulders. The devil, who is very strong, but also very lazy and unaccustomed to work, soon got tired of carrying the heavy chest, and wanted to rest before he was out of the street on which he lived; but his wife called out to him, &quot;Don't put it down; I see you!&quot;</p>
+<p>The devil went reluctantly on with the chest until he had turned the corner, and then said to himself, &quot;She cannot see me here; I will rest a little.&quot;</p>
+<p>But scarcely had he begun to put the chest down when the sister inside cried out, &quot;Don't put it down; I see you still!&quot;</p>
+<p>Cursing, he dragged the chest on into another street, and was going to lay it down on a doorstep, but he again heard the voice, &quot;Don't lay it down, you rascal; I see you still!&quot;</p>
+<p>&quot;What kind of eyes must my wife have,&quot; he thought, &quot;to see around corners as well as straight ahead, and through walls as if they were made of glass!&quot; and thus thinking he arrived, all in a perspiration and quite tired out, at the house of his mother-in-law, to whom he hastily delivered the chest, and then hurried home to strengthen himself with a good breakfast.</p>
+<p>The same thing was repeated the next day with the second chest. On the third day she herself was to be taken home in the chest. She therefore prepared a figure which she dressed in her own clothes, and placed on the balcony, under the pretext of being able to watch him better; slipped quickly into the chest, and had the maid put it on the devil's back.</p>
+<p>&quot;The deuce!&quot; said he; &quot;this chest is a great deal heavier than the others; and today, when she is sitting on the balcony, I shall have so much the less chance to rest.&quot;</p>
+<p>So by dint of the greatest exertions he carried it, without stopping, to his mother-in-law, and then hastened home to breakfast, scolding, and with his back almost broken.</p>
+<p>But quite contrary to custom, his wife did not come out to meet him, and there was no breakfast ready.</p>
+<p>&quot;Margerita, where are you?&quot; he cried, but received no answer. As he was running through the corridors, he at length looked out of a window and saw the figure on the balcony. &quot;Margerita, have you gone to sleep? Come down. I am as tired as a dog, and as hungry as a wolf.&quot;</p>
+<p>But there was no reply.</p>
+<p>&quot;If you do not come down instantly I will go up and bring you down,&quot; he cried, angrily; but Margerita did not stir.</p>
+<p>Enraged, he hastened up to the balcony, and gave her such a box on the ear that her head flew off, and he saw that the head was nothing but a milliner's form, and the body, a bundle of rags. Raging, he rushed down and rummaged through the whole house, but in vain; he found only his wife's empty jewel box.</p>
+<p>&quot;Ha!&quot; he cried; &quot;she has been stolen from me and her jewels, too!&quot; and he immediately ran to inform her parents of the misfortune.</p>
+<p>But when he came near the house, to his great surprise he saw on the balcony above the door all three sisters, his wives, who were looking down on him with scornful laughter.</p>
+<p>Three wives at once terrified the devil so much that he took his flight with all possible speed.</p>
+<p>Since that time he has lost his taste for marrying.</p>
+
+
+<nav class="seriesTOC"><details open>
+		<summary>Series: Evil Husbands and Their Curious Wives</summary>
+		<div class="content">
+			<p>Exploring a type of folktale wherein an evil husband is bested by his curious wife</p>
+			
+			<ul>
+        
+         
+        
+         
+        
+         
+        
+         <li class="seriesTOC_list"><a class="" href="https://sites.pitt.edu/~dash/type0311.html" target="_blank" rel="noopener">Source - Aarne-Thompson-Uther type 311<span class="visuallyHidden">(opens in a new tab)</span></a></li>
+         </ul>
+		</div>
+	</details></nav>
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /the-devil/ -->
+  </body>
+</html>

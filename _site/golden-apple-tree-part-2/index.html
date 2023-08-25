@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>The Golden Apple Tree and the Nine Peahens -- The Search</title>
+		<meta name="description" content="The second part of the Prince and the Peahen">
+		<link rel="alternate" href="/feed/feed.xml" type="application/atom+xml" title="Your Blog Name">
+		<link rel="alternate" href="/feed/feed.json" type="application/json" title="Your Blog Name">
+    <link rel="stylesheet" href="/css/prism-base16-monokai.dark.css">
+		<style>* { box-sizing: border-box; }
+:root {
+  --red: #c5004a;
+  --darkred: #7f0036;
+  --lightgray: #e0e0e0;
+  --gray: #c0c0c0;
+  --darkgray: #333;
+  --navy: #375282; /*dark cornblower blue */
+  --blue: cornflowerblue;
+  --white: #fff;
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  color: var(--darkgray);
+  background-color: var(--white);
+}
+p:last-child {
+  margin-bottom: 0;
+}
+p,
+.tmpl-post li,
+img {
+  max-width: 37.5em; /* 600px /16 */
+}
+p,
+.tmpl-post li {
+  line-height: 1.45;
+}
+a[href] {
+  color: var(--blue);
+}
+a[href]:visited {
+  color: var(--navy);
+}
+main {
+  padding: 1rem;
+}
+main :first-child {
+  margin-top: 0;
+}
+header {
+  border-bottom: 1px dashed var(--lightgray);
+}
+header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+table {
+  margin: 1em 0;
+}
+table td,
+table th {
+  padding-right: 1em;
+}
+
+pre,
+code {
+  font-family: Consolas, Menlo, Monaco, "Andale Mono WT", "Andale Mono",
+    "Lucida Console", "Lucida Sans Typewriter", "DejaVu Sans Mono",
+    "Bitstream Vera Sans Mono", "Liberation Mono", "Nimbus Mono L",
+    "Courier New", Courier, monospace;
+  line-height: 1.5;
+}
+pre {
+  font-size: 14px;
+  line-height: 1.375;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  -o-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: 0.5em 0;
+  background-color: #f6f6f6;
+}
+.highlight-line {
+  display: block;
+  padding: 0.125em 1em;
+  text-decoration: none; /* override del, ins, mark defaults */
+  color: inherit; /* override del, ins, mark defaults */
+}
+
+/* allow highlighting empty lines */
+.highlight-line:empty:before {
+  content: " ";
+}
+/* avoid double line breaks when using display: block; */
+.highlight-line + br {
+  display: none;
+}
+
+.highlight-line-isdir {
+  color: #b0b0b0;
+  background-color: #222;
+}
+.highlight-line-active {
+  background-color: #444;
+  background-color: hsla(0, 0%, 27%, 0.8);
+}
+.highlight-line-add {
+  background-color: #45844b;
+}
+.highlight-line-remove {
+  background-color: #902f2f;
+}
+
+/* Header */
+.home {
+  padding: 0 1rem;
+  float: left;
+  margin: 1rem 0; /* 16px /16 */
+  font-size: 1em; /* 16px /16 */
+}
+.home :link:not(:hover) {
+  text-decoration: none;
+}
+
+/* Nav */
+.nav {
+  padding: 0;
+  list-style: none;
+  float: left;
+  margin-left: 1em;
+}
+.nav-item {
+  display: inline-block;
+  margin-right: 1em;
+}
+.nav-item a[href]:not(:hover) {
+  text-decoration: none;
+}
+.nav-item-active {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Posts list */
+.postlist {
+  list-style: none;
+  padding: 0;
+}
+.postlist-item {
+  counter-increment: start-from -1;
+}
+.postlist-item:before {
+  display: inline-block;
+  pointer-events: none;
+  content: "" counter(start-from, decimal-leading-zero) ". ";
+  line-height: 100%;
+  text-align: right;
+}
+.postlist-date,
+.postlist-item:before {
+  font-size: 0.8125em; /* 13px /16 */
+  color: var(--darkgray);
+}
+.postlist-date {
+  word-spacing: -0.5px;
+}
+.postlist-link {
+  display: inline-block;
+  padding: 0.25em 0.1875em; /* 4px 3px /16 */
+}
+.postlist-item-active .postlist-link {
+  font-weight: bold;
+}
+.tmpl-home .postlist-link {
+  font-size: 1.1875em; /* 19px /16 */
+  font-weight: 700;
+}
+
+/* Tags */
+.tag {
+  display: inline-block;
+  vertical-align: text-top;
+  text-transform: uppercase;
+  font-size: 0.625em; /* 10px /16 */
+  padding: 2px 4px;
+  margin-left: 0.8em; /* 8px /10 */
+  background-color: var(--red);
+  color: var(--white);
+  border-radius: 0.25em; /* 3px /12 */
+  text-decoration: none;
+}
+a[href].tag,
+a[href].tag:visited {
+  color: #fff;
+}
+
+/* Warning */
+.warning {
+  background-color: #ffc;
+  padding: 1em 0.625em; /* 16px 10px /16 */
+}
+.warning ol:only-child {
+  margin: 0;
+}
+
+/* Direct Links / Markdown Headers */
+.direct-link {
+  font-family: sans-serif;
+  text-decoration: none;
+  font-style: normal;
+  margin-left: 0.1em;
+}
+a[href].direct-link,
+a[href].direct-link:visited {
+  color: transparent;
+}
+a[href].direct-link:focus,
+a[href].direct-link:focus:visited,
+:hover > a[href].direct-link,
+:hover > a[href].direct-link:visited {
+  color: #aaa;
+}
+
+/* Custom Styles for Series Tutorial */
+
+nav.seriesTOC {
+  color: rebeccapurple;
+  font-weight: 700;
+  font-family: "Georgia", "Times New Roman", Times, serif;
+}
+
+details {
+  background-color: antiquewhite;
+  padding: 1rem;
+}
+
+details .content {
+  padding: 1rem;
+}
+
+details .content p {
+  font-style: italic;
+}
+
+details ul {
+  list-style-type: none;
+}
+
+details ul li {
+  line-height: 1.7;
+}
+
+details ul li.subhead {
+  margin-bottom: 1rem;
+  font-variant-caps: all-small-caps;
+}
+
+a[href]:not(:where(
+  /* exclude hash only links */
+  [href^="#"],
+  /* exclude relative but not double slash only links */
+  [href^="/"]:not([href^="//"]),
+  /* domains to exclude */
+  [href*="//localhost:8080"],
+  /* subdomains to exclude */
+)):after {
+  padding-left: 0.5rem;
+  content: "↬";
+  color: crimson;
+}
+
+[aria-current="page"] {
+  font-weight: 300;
+  text-decoration: none;
+}</style>
+	</head>
+  <body>
+    <header>
+      <h1 class="home"><a href="/">Your Blog Name</a></h1>
+      <ul class="nav">
+        <li class="nav-item"><a href="/">Home</a></li>
+        <li class="nav-item"><a href="/archives/">Archive</a></li>
+        <li class="nav-item"><a href="/about/">About Me</a></li>
+      </ul>
+    </header>
+
+    <main>
+      <div class="warning">
+        <ol>
+          <li>Edit the <code>_data/metadata.json</code> with your blog’s information.</li>
+          <li>(Optional) Edit <code>.eleventy.js</code> with your <a href="https://www.11ty.dev/docs/config/">configuration preferences</a>.</li>
+          <li>Delete this message from <code>_includes/layouts/base.njk</code>.</li>
+        </ol>
+        <p><em>This is an <a href="https://www.11ty.io/">Eleventy project</a> created from the <a href="https://github.com/11ty/eleventy-base-blog"><code>eleventy-base-blog</code> repo</a>.</em></p>
+      </div>
+
+      
+
+<h1>The Golden Apple Tree and the Nine Peahens -- The Search</h1>
+
+<ul class="post-metadata">
+	<li><time datetime="2018-10-02">02 Oct 2018</time></li>
+	<li><a href="/tags/second-tag/" class="post-tag">second tag</a></li>
+</ul>
+
+<p>At length he resolved to go and look after his peahen; resolving never to come back again unless he should find her. When he told the king his father of his intention, the king begged him not do go away, and told him that he would find him another beautiful girl, and that he might choose out of the whole kingdom.</p>
+<p>But all the king's persuasions were useless, so his son went into the world -- taking only one servant to serve him -- to search everywhere for his peahen.</p>
+<p>After many travels he came one day to a lake. Now by the lake stood a large and beautiful palace. In the palace lived an old woman as queen, and with the queen lived a girl, her daughter. He said to the old woman, &quot;For heaven's sake, grandmother, do you know anything about nine golden peahens?&quot;</p>
+<p>And the old woman answered, &quot;Oh, my son, I know all about them. They come every midday to bathe in the lake. But what do you want with them? Let them be. Think nothing about them. Here is my daughter. Such a beautiful girl! And such an heiress! All my wealth will remain to you if you marry her.&quot;</p>
+<p>But he, burning with desire to see the peahens, would not listen to what the old woman spoke about her daughter.</p>
+<p>Next morning, when day dawned, the prince prepared to go down to the lake to wait for the peahens. Then the old queen bribed the servant and gave him a little pair of bellows, and said, &quot;Do you see these bellows? When you come to the lake you must blow secretly with them behind his neck, and then he will fall asleep, and not be able to speak to the peahens.&quot;</p>
+<p>The mischievous servant did as the old woman told him. When he went with his master down to the lake, he took occasion to blow with the bellows behind his neck, and the poor prince fell asleep just as though he were dead.</p>
+<p>Shortly after, the nine peahens came flying, and eight of them alighted by the lake, but the ninth flew towards him as he sat on horseback, and caressed him, and tried to awaken him. &quot;Awake my darling! Awake, my heart! Awake, my soul!&quot;</p>
+<p>But for all that he knew nothing, just as if he were dead.</p>
+<p>After they had bathed, all the peahens flew away together, and after they were gone the prince woke up, and said to his servant, &quot;What has happened? Did they not come?&quot;</p>
+<p>The servant told him they had been there, and that eight of them had bathed, but the ninth had sat by him on his horse, and caressed and tried to awaken him. Then the king's son was so angry that he almost killed himself in his rage.</p>
+<p>Next morning he went down again to the shore to wait for the peahens, and rode about a long time till the servant again found an opportunity of blowing with the bellows behind his neck, so that he again fell asleep as though dead. Hardly had he fallen asleep before the nine peahens came flying, and eight of them alighted by the water, but the ninth settled down by the side of his horse and caressed him, and cried out to awaken him, &quot;Arise, my darling! Arise, my heart! Arise my soul!&quot;</p>
+<p>But it was of no use. The prince slept on as if he were dead. Then she said to the servant, &quot;Tell your master, tomorrow he can see us here again, but nevermore.&quot;</p>
+<p>With these words the peahens flew away. Immediately after, the king's son woke up and asked his servant, &quot;Have they not been here?&quot;</p>
+<p>And the man answered, &quot;Yes, they have been, and say that you can see them again tomorrow, at this place, but after that they will not return again.&quot;</p>
+<p>When the unhappy prince heard that, he knew not what to do with himself, and in his great trouble and misery tore the hair from his head.</p>
+<p>The third day he went down again to the shore, but, fearing to fall asleep, instead of riding slowly, galloped along the shore. His servant, however, found an opportunity of blowing with the bellows behind his neck, and again the prince fell asleep.</p>
+<p>A moment after came the nine peahens, and the eight alighted on the lake and the ninth by him on his horse, and sought to awaken him, caressing him. &quot;Arise, my darling! Arise, my heart! Arise, my soul!&quot;</p>
+<p>But it was of no use. He slept on as if dead. Then the peahen said to the servant, &quot;When your master awakens tell him he ought to strike off the head of the nail from the lower part, and then he will find me.&quot;</p>
+<p>Thereupon all the peahens fled away. Immediately the king's son awoke and said to his servant, &quot;Have they been here?&quot;</p>
+<p>And the servant answered, &quot;They have been, and the one which alighted on your horse, ordered me to tell you to strike off the head of the nail from the lower part, and then you will find her.&quot;</p>
+<p>When the prince heard that, he drew his sword and cut off his servant's head.</p>
+<p>After that he traveled alone about the world, and, after long traveling, came to a mountain and remained all night there with a hermit, whom he asked if he knew anything about nine golden peahens.</p>
+<p>The hermit said, &quot;Eh! My son, you are lucky. God has led you in the right path. From this place it is only a half a day's walk. But you must go straight on, then you will come to a large gate, which you must pass through. And, after that, you must keep always to the right hand, and so you will come to the peahens' city, and there find their palace.&quot;</p>
+
+
+<nav class="seriesTOC"><details open>
+		<summary>Series: The Swan Wives</summary>
+		<div class="content">
+			<p>Women who turn into swans, and the men who love them</p>
+			
+			<ul><li class="subhead">A Serbian variant</li>
+        
+         
+        
+         
+        
+         
+        
+         </ul>
+		</div>
+	</details></nav>
+    </main>
+
+    <footer></footer>
+
+    <!-- Current page: /golden-apple-tree-part-2/ -->
+  </body>
+</html>
