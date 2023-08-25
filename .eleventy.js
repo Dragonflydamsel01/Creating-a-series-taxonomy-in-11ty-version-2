@@ -89,15 +89,15 @@ module.exports = function (eleventyConfig) {
     require('./src/_11ty/collections/seriesCollections.js')
   );
 
-  eleventyConfig.addPassthroughCopy({ '/assets/img': '/assets/img' });
+  eleventyConfig.addPassthroughCopy({ './src/assets/img': '/assets/img' });
 
   eleventyConfig.addPassthroughCopy({
-    '/assets/': '/',
+    './src/assets/': '/',
     './node_modules/prismjs/themes/prism-okaidia.css': '/css/prism-okaidia.css',
   });
 
   eleventyConfig.addPassthroughCopy({
-    '/assets/': '/',
+    './src/assets/': '/',
     './node_modules/prismjs/themes/':
       '/assets/css/prism-base16-monokai.dark.css',
   });
@@ -151,11 +151,11 @@ module.exports = function (eleventyConfig) {
     dataTemplateEngine: 'njk',
 
     // These are all optional, defaults are shown:
-    dir: {     
-      includes: "_includes",  // default: "_includes"
-      data: "_data",          // default: "_data"
-      input: "src",          // default: "."
-      output: "dist"
+    dir: {
+      includes: '_includes', // default: "_includes"
+      data: '_data', // default: "_data"
+      input: 'src', // default: "."
+      output: 'dist',
     },
   };
 };
