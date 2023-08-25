@@ -89,7 +89,7 @@ module.exports = function (eleventyConfig) {
     require("./_11ty/collections/seriesCollections.js")
   );
 
-  eleventyConfig.addPassthroughCopy({ "./assets/img": "/_site/assets/img" });
+  eleventyConfig.addPassthroughCopy({ "./assets/img": "/assets/img" });
 
   eleventyConfig.addPassthroughCopy({
     "./assets/": "/",
@@ -152,7 +152,7 @@ module.exports = function (eleventyConfig) {
 
     // These are all optional, defaults are shown:
     dir: {
-      input: "./content", // default: "."
+      input: "/content", // default: "."
       includes: "_includes", // default: "_includes"
       data: "_data", // default: "_data"
       output: "_site",
