@@ -154,8 +154,8 @@ module.exports = function (eleventyConfig) {
     dir: {     
       includes: "_includes",  // default: "_includes"
       data: "_data",          // default: "_data"
-      input: "/content",          // default: "."
-      output: "/_site"
+      input: "src",          // default: "."
+      output: "dist"
     },
   };
 };
