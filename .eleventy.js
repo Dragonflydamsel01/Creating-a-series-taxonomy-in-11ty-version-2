@@ -89,7 +89,7 @@ module.exports = function (eleventyConfig) {
     require('./src/_11ty/collections/seriesCollections.js')
   );
 
-  eleventyConfig.addPassthroughCopy({ './src/assets/img': '/assets/img' });
+  eleventyConfig.addPassthroughCopy({ './src/assets/img': './dist/assets/img' });
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/': '/',
