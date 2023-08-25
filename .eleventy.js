@@ -73,20 +73,20 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addCollection(
     'tagList',
-    require('./_11ty/collections/getTagList')
+    require('./src/_11ty/collections/getTagList')
   );
 
   //posts or blog collections
   eleventyConfig.addCollection(
     'posts',
-    require('./_11ty/collections/posts.js')
+    require('./src/_11ty/collections/posts.js')
   );
 
   // Article/blog series collections
 
   eleventyConfig.addCollection(
     'seriesCollections',
-    require('./_11ty/collections/seriesCollections.js')
+    require('./src/_11ty/collections/seriesCollections.js')
   );
 
   eleventyConfig.addPassthroughCopy({ '/assets/img': '/assets/img' });
