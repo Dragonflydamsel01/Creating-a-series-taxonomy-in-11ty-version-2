@@ -93,13 +93,13 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/': '/',
-    './node_modules/prismjs/themes/prism-okaidia.css': '/css/prism-okaidia.css',
+    './node_modules/prismjs/themes/prism-okaidia.css': './dist/assets/css/prism-okaidia.css',
   });
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/': '/',
     './node_modules/prismjs/themes/':
-      '/assets/css/prism-base16-monokai.dark.css',
+      './dist/assets/css/prism-base16-monokai.dark.css',
   });
 
   // Customize Markdown library settings:
