@@ -89,17 +89,17 @@ module.exports = function (eleventyConfig) {
     require('./src/_11ty/collections/seriesCollections.js')
   );
 
-  eleventyConfig.addPassthroughCopy({ './src/assets/img': './dist/assets/img' });
+  eleventyConfig.addPassthroughCopy({ './src/assets/img': './assets/img' });
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/': '/',
-    './node_modules/prismjs/themes/prism-okaidia.css': './dist/assets/css/prism-okaidia.css',
+    './node_modules/prismjs/themes/prism-okaidia.css': './assets/css/prism-okaidia.css',
   });
 
   eleventyConfig.addPassthroughCopy({
     './src/assets/': '/',
     './node_modules/prismjs/themes/':
-      './dist/assets/css/prism-base16-monokai.dark.css',
+      './assets/css/prism-base16-monokai.dark.css',
   });
 
   // Customize Markdown library settings:
