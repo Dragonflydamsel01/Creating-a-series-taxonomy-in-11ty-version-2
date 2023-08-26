@@ -18,40 +18,36 @@ layout: layouts/base.njk
 <nav class="seriesTOC">
 {%- if series -%}
 {%- set collectionObject = collections.seriesCollections[series.slug] -%}
-	<details open>
-		<summary>Series: {{collectionObject.collection.data.title}}</summary>
+<details open>
+	<summary>Series: {{collectionObject.collection.data.title}}</summary>
 		<div class="content">
 			<p>{{collectionObject.collection.data.preface}}</p>
-			
 			<ul>                      
-			{%- for post in collectionObject.posts -%}
+				{%- for post in collectionObject.posts -%}
 				{%- set currentPost = false -%}
 
-				{#- style current post differently from the other posts on the list -#}
 				{%- if post.data.title == title -%}
-					{%- set currentPost = true -%}
+						{%- set currentPost = true -%}
 				{%- endif -%}
-	
-				{#- This is how I jury-rigged subheads onto the TOC -#}
 
-			  {%- if post.data.series.subhed -%}
-        <li class="subhead">{{post.data.series.subhed}}</li>
-        {%- endif -%}
-        
-        {# The regular link / list item #}
-        
-        {%- if post.data.permalink == false and not post.data.series.url -%}
-				<li class="seriesTOC_list"><a class="" href="{{ post.url }}" {%- if currentPost -%}aria-current="page"{%- endif -%}>{{ post.data.title | safe }}</a></li>
-        {% endif %}
-        
-         {# This sets the external links #}
-				 {%- if post.data.series.url -%}
-         <li class="seriesTOC_list"><a class="" href="{{ post.data.series.url }}" target="_blank" rel="noopener">{{ post.data.title | safe }}<span class="visuallyHidden">(opens in a new tab)</span></a></li>
-         {%endif %}
-	
-			{%- endfor -%}
+				{% if post.data.permalink == false and not post.data.series.url  %}
+				<li class="subhead">{{post.data.title | safe}}</li>
+				{% endif %}
+
+				{% if post.data.series.subhed  %}
+				<li class="subhead">{{post.data.series.subhed}}</li>
+				{% endif %}
+
+				{% if post.data.permalink %}   
+				<li class="seriesTOC_list"><a class="" href="{{ post.url }}" {% if currentPost %}aria-current="page"{% endif %}>{{ post.data.title | safe }}</a></li>
+		
+				{% elif post.data.series.url %}
+				<li class="seriesTOC_list"><a class="" href="{{ post.data.series.url }}" target="_blank" rel="noopener">{{ post.data.title | safe }}<span class="visuallyHidden">(opens in a new tab)</span></a></li>
+				{%endif %}
+
+				{%- endfor -%}
 			</ul>
 		</div>
-	</details>
-{%- endif -%}
+</details>
+{%- endif -%}       
 </nav>
