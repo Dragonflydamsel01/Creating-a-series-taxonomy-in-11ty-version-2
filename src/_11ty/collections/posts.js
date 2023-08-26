@@ -1,5 +1,5 @@
 module.exports = function (collection) {
   return collection
-    .getFilteredByGlob(["./content/posts/*.html", "./content/posts/*.md"])
+    .getFilteredByGlob(["./src/content/posts/*.html", "./src/content/posts/*.md"])
     .reverse();
 };
