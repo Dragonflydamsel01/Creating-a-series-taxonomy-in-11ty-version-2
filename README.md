@@ -3,7 +3,11 @@
 ## The Bloody Point of This Sandbox
 
 If you want to link blog posts based on whether or not they are related by topic/theme (a series);
-study this sandbox. This version is forked from version 1, and in this version the TOC for the series is placed inside the post. In this case, at the bottom of the post. This variant is based on the method used by A11y Project.com. Scroll to the bottom of the linked page to see the table of contents for their ARIA series:
+study this sandbox. This version is forked from version 1:
+
+https://stackblitz.com/edit/11ty-3gxc6t?file=README.md
+
+In this version (v2) the TOC for the series is placed inside the post. In this case, at the bottom of the post. This variant is based on the method used by A11y Project.com. Scroll to the bottom of the linked page to see the table of contents for their ARIA series:
 
 https://www.a11yproject.com/posts/an-indepth-guide-to-aria-roles/
 
@@ -26,7 +30,7 @@ CTRL+F to "collections.seriesCollections" (without the quotes)
 Swap out any styles mentioned for your own styles.
 
 4. content / series
-   Note: The Series folder must be on the same level as your Posts folder. In this case, both the Series and the Posts folders are inside the Content folder. The "collection object" (that's what 11ty collections are) will be whatever files you put in this folder.
+   Note: The Series folder must be on the same level as your Posts (blog) folder. In this case, both the Series and the Posts folders are inside the Content folder. The "collection object" (11ty collections are javascript objects) will be whatever files you put in this folder.
 
 The name you give the file will be used as the slug for the series (which you can see in the "seriesCollections.js" file in step 1). So for instance, "swan-wives.html" becomes the "swan-wives" slug for the Swan Wives series.
 
@@ -45,7 +49,7 @@ preface: "Description of your series"
 
 6. content / series / series.11tydata.js
 
-If you call your Series folder something else for some reason, then change the name of this file to reflect that.
+If you call your Series folder something else for some reason, then change the name of the .11tydata.js file to reflect that.
 
 7. frontmatter for a given post in content --> posts
 
@@ -72,7 +76,7 @@ subhed: A Serbian variant of the wif-swan folktale
 ---
 ```
 
-Yes, I used the spelling of subhead that's used in journalism, "subhed". This is to make sure that key doesn't clash with any other subheads you may have in your post's frontmatter.
+Yes, I used the spelling of subhead that's used in journalism, "s-u-b-h-e-d." This is to make sure that key doesn't clash with any other subheads you may have in your post's frontmatter.
 
 ## BONUS - External Links
 
