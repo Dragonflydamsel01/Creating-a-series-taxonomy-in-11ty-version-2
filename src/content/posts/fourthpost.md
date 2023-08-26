@@ -11,7 +11,7 @@ tags: second tag
 ---
 Our next theme concerns what I shall tongue-in-cheek refer to as "wif-swans": Woman-swans, or wife-swans. Because the Old English word for *woman* is *wif*, and this is relevant because the Old English word for *man* is *wer*, from which we derive *werewolf* and *weregild* (man-price, blood money). This particular version comes from Serbia, only they switch it up by using peahens.  
 <figure>
-<img src="../../../assets/img/wlop-black-swan.jpg" alt="woman in a fancy dress reads a book in a bright ballroom, while swans cavort about her" style="max-width:85vh;">
+<img src="/assets/img/wlop-black-swan.jpg" alt="woman in a fancy dress reads a book in a bright ballroom, while swans cavort about her" style="max-width:85vh;">
 <figcaption>Black Swan by WLOP /<a href="https://www.artstation.com/artwork/ZGr13N"> Art Station</a> </figcaption>
 </figure>
 
