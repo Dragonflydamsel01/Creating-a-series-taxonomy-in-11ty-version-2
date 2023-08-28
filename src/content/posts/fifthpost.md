@@ -2,7 +2,7 @@
 title: The Golden Apple Tree and the Nine Peahens -- The Search
 description: The second part of the Prince and the Peahen
 slug: golden-apple-tree-part-2
-date: 2018-10-02
+date: 2023-08-02
 series:
   slug: "swan-wives"
   order: 2
